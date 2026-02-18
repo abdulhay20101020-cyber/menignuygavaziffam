@@ -1,0 +1,12 @@
+<h1>Barcha Xizmatlar</h1>
+
+{% for s in services %}
+    <p>
+        <a href="/service/{{ s.id }}/">{{ s.title }}</a> |
+        Kategoriya: {{ s.category.title }} |
+        Mexanik: {{ s.mechanic.full_name }} |
+        Narxi: ${{ s.price }}
+    </p>
+{% empty %}
+    <p>Hali xizmat qo‘shilmagan.</p>
+{% endfor %}

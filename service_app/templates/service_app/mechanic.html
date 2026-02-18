@@ -1,0 +1,15 @@
+<h2>{{ mechanic.full_name }}</h2>
+<p>Tajriba: {{ mechanic.experience_year }} yil</p>
+<p>Telefon: {{ mechanic.phone }}</p>
+<p>Faol: {{ mechanic.is_active }}</p>
+
+{% if experienced %}
+    <b style="color:green;">Tajribali Mutaxassis</b>
+{% endif %}
+
+<h3>Xizmatlar ({{ services.count }})</h3>
+{% for s in services %}
+    <p>{{ s.title }} - Narxi: ${{ s.price }}</p>
+{% empty %}
+    <p>Ushbu mexanikga xizmat yo‘q.</p>
+{% endfor %}

@@ -1,0 +1,13 @@
+<h2>{{ service.title }}</h2>
+<p>Tavsif: {{ service.description }}</p>
+<p>Narxi: ${{ service.price }}</p>
+<p>Davomiyligi: {{ service.duration }} daqiqa</p>
+<p>Mexanik: {{ service.mechanic.full_name }}</p>
+<p>Yaratilgan sana: {{ service.created_at }}</p>
+
+<h3>Ushbu mexanik bajaradigan boshqa xizmatlar:</h3>
+{% for s in other %}
+    <p>{{ s.title }}</p>
+{% empty %}
+    <p>Yo‘q</p>
+{% endfor %}

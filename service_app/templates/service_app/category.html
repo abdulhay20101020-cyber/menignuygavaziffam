@@ -1,0 +1,7 @@
+<h2>Kategoriya: {{ category }}</h2>
+
+{% for s in services %}
+    <p>{{ s.title }} - Narxi: ${{ s.price }}</p>
+{% empty %}
+    <p>Ushbu kategoriyada xizmatlar topilmadi!</p>
+{% endfor %}
